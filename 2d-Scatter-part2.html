@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <title>zachshen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="Shortcut Icon" type="image/x-icon" href="blocks.ico">
-    <link rel="stylesheet" href="https://static.parastorage.com/services/santa/1.1850.19/static/css/viewer.css">
-<script src="https://d3js.org/d3.v3.js"></script>
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
     <style>
         body {
             background: #eee;
@@ -46,55 +39,12 @@
             display: none;
         }
     </style>
-
 </head>
 
 <body>
-
-    <!--   文字-->
-    <div>
-        <style>
-            .font_2 {
-                font: italic normal normal 55px/1.4em adobe-caslon-w01-smbd, serif;
-                color: #44593A;}
-            .font_4 {
-                font: normal normal normal 35px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;
-                color: #44593A;}
-        </style>
-    </div>
- 
-    <!--背景-->
-<!--
-
-    <div id="SITE_BACKGROUND" class="siteBackground" style="position: absolute; top: 0px; height: 2891px; width: 980px;" data-reactid=".0.$SITE_BACKGROUND">
-
-        <div id="SITE_BACKGROUND_current_c1dmp" style="top:0;height:100%;width:100%;background-color:rgba(255, 255, 255, 1);display:;position:fixed;" class="siteBackgroundcurrent" data-reactid=".0.$SITE_BACKGROUND.$c1dmp">
-            <div id="SITE_BACKGROUND_currentImage_c1dmp" style="position: absolute; top: 0px; height: 100%; width: 100%; opacity: 1; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url(&quot;https://static.wixstatic.com/media/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg/v1/fill/w_1501,h_997,al_c,q_85/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg&quot;);" data-type="bgimage" class="siteBackgroundcurrentImage" data-reactid=".0.$SITE_BACKGROUND.$c1dmp.$background_currentImage_fixed" data-image-css="{&quot;backgroundSize&quot;:&quot;cover&quot;,&quot;backgroundPosition&quot;:&quot;center center&quot;,&quot;backgroundRepeat&quot;:&quot;no-repeat&quot;}"></div>
-
-        </div>
-    </div>
-
-                                        <div style="position: absolute; width: 772px; height: 159px; top: 148px; left: 104px;" class="s14" id="comp-iiyg26n9" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1dmp_DESKTOP.1.$comp-iiyg26n9">
-                                       
-                                                <div style="width: 772px; position: absolute; visibility: inherit; left: 0px; top: 59px;" class="s2" id="comp-ihkdkdq9" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1dmp_DESKTOP.1.$comp-iiyg26n9.0.$comp-ihkdkdq9">
-                                                    <h4 class="font_4" style="line-height: 1.4em;"><span style="font-family:bodoni-w01-poster,bodoni-poster-w10,fantasy;">關於</span></h4>
-
-                                                    <h4 class="font_4" style="line-height: 1.4em;"><span style="font-family:bodoni-w01-poster,bodoni-poster-w10,fantasy;">電影</span></h4>
-                                                </div>
-                                              
-                                                    <h2 ><span class="color_19"><span style="font-size:20px"><span style="letter-spacing:0.15em"><span>zachshen</span></span></span></span></h2>
-                                                </div>
-                                          
-                                        
--->
-   
-    <!--            save!!!!!!!!!!!-->
- 
-<!--CONTENT-->
-    
-      <div id="tooltip" class="hidden">
-        <p><strong id="name">Hello</strong></p>
-        <p id="director">tooltip</p>
+    <div id="tooltip" class="hidden">
+        <p><strong id="city">Hello</strong></p>
+        <p id="industry">tooltip</p>
     </div>
     <script>
         var w = 900;
@@ -104,7 +54,7 @@
 
         svg();
 
-        d3.csv("movie8.csv", function (dataSet) {
+        d3.csv("invoice.csv", function (dataSet) {
             bind(dataSet);
             render(dataSet);
             btnList(dataSet);
@@ -138,9 +88,9 @@
             //比例尺們 xScale, yScale, rScale, fScale
             var xScale = d3.time.scale()
                 .domain([new Date(d3.min(dataSet, function (d) {
-                    return new Date(d.years);
+                    return new Date(d.date);
                 })), new Date(d3.max(dataSet, function (d) {
-                    return new Date(d.years);
+                    return new Date(d.date);
                 }))])
                 .range([padding, w - padding]);
             var yScale = d3.scale.linear()
@@ -150,9 +100,9 @@
                 .range([h - padding, padding]);
             var rScale = d3.scale.linear()
                 .domain([d3.min(dataSet, function (d) {
-                    return +d.number;
+                    return +d.amount;
                 }), d3.max(dataSet, function (d) {
-                    return +d.number;
+                    return +d.amount;
                 })])
                 .range([5, 20]);
             var fScale = d3.scale.category20();
@@ -164,20 +114,19 @@
 //             .transition()
                 .attr({
                     cx: function (d) {
-                        return xScale(new Date(d.years));
+                        return xScale(new Date(d.date));
                     },
                     cy: function (d) {
                         return yScale(+d.number);
                     },
                     r: function (d) {
-                        return rScale(+d.number);
+                        return rScale(+d.amount);
                     },
                     fill: function (d) {
-                        return fScale(letterList.indexOf(d.category));
+                        return fScale(letterList.indexOf(d.cid));
                     }
                 })
-//RETURN FSCALE D. XXXXXX
-//到底為甚麼
+
             //           要找球的位置 用ＡＴＴＲ拿她的ＣＸＣＹ
             //           +12 讓他位移 把字串改數字用parseFloat
             .on("mouseover", function (d) {
@@ -192,8 +141,8 @@
                         top: yPos + "px"
                     });
 //hidden T,F要寫到
-                    d3.select("#name").text(d.name);
-                    d3.select("#director").text(d.director);
+                    d3.select("#city").text(d.city);
+                    d3.select("#industry").text(d.industry);
                     d3.select("#tooltip").classed("hidden",false);})
                     .on("mouseout", function (d) {
                     d3.select("#tooltip").classed("hidden", true);
@@ -219,14 +168,14 @@
         function btnList(dataSet) {
 
             //industryArr: 行業別陣列(包含重複項目)           
-            var categoryArr = dataSet.map(function (d) {
-                return d.category;
+            var industryArr = dataSet.map(function (d) {
+                return d.industry;
             });
             //uniqueIndustryArr: 行業別陣列(無重複項目) 
-            var uniquecategoryArr = unique(categoryArr);
+            var uniqueIndustryArr = unique(industryArr);
 
             //filterIndustryArr: 行業別陣列(去除空白項目) 
-            var filtercategoryArr = uniquecategoryArr.filter(function (d) {
+            var filterIndustryArr = uniqueIndustryArr.filter(function (d) {
                 return d != "";
             });
 
@@ -235,7 +184,7 @@
             var selection = d3.select("body")
                 .append("div")
                 .selectAll("input")
-                .data(filtercategoryArr);
+                .data(filterIndustryArr);
 
             //            沒有綁定視覺元素的把它加上ＩＮＰＵＴ
             selection.enter()
@@ -254,10 +203,10 @@
 
 
             //            拿整份dataset
-            function update(categoryName) {
+            function update(industryName) {
                 //過濾行業別符合者
                 var newDataSet = dataSet.filter(function (d) {
-                    return d.category === categoryName;
+                    return d.industry === industryName;
                 });
                 //重新整理bind,render
                 //???
@@ -277,10 +226,6 @@
         }
     </script>
 
-
-
-      
-                                                        
 </body>
 
 </html>
