@@ -14,7 +14,12 @@
 <script src="https://d3js.org/d3.v3.js"></script>
     <style>
         body {
-            background: #eee;
+            background:url("https://static.wixstatic.com/media/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index:-1
+            
         }
         
         .axis path,
@@ -30,12 +35,12 @@
         
         #tooltip {
             position: absolute;
-/*
+
             left: 20px;
             top: 100px;
-*/
-            background: #fff;
-            width: 150px;
+/*    TOOLtip框框顏色*/
+            background: #666666;
+            width: auto;
             height: auto;
             padding: 0px 10px;
             border-radius: 5px;
@@ -46,7 +51,7 @@
             display: none;
         }
     </style>
-
+<br><br><br><br><br><br><br><br><br><br>
 </head>
 
 <body>
@@ -61,45 +66,55 @@
                 font: normal normal normal 35px/1.4em avenir-lt-w01_85-heavy1475544, sans-serif;
                 color: #44593A;}
         </style>
+    
     </div>
  
     <!--背景-->
+
+<!--    <div id="SITE_BACKGROUND" class="siteBackground" style="position: absolute; top: 0px; height: 2891px; width: 980px;" data-reactid=".0.$SITE_BACKGROUND">-->
+
+<!--        <div id="SITE_BACKGROUND_current_c1dmp" style="top:0;height:100%;width:100%;background-color:rgba(255, 255, 255, 1);z-index:-1;display:;position:fixed;" class="siteBackgroundcurrent" data-reactid=".0.$SITE_BACKGROUND.$c1dmp">-->
+<!--            <div id="SITE_BACKGROUND_currentImage_c1dmp" style="position: absolute; top: 0px; height: 100%; width: 100%; opacity: 1; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url(&quot;https://static.wixstatic.com/media/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg/v1/fill/w_1501,h_997,al_c,q_85/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg&quot;);" data-type="bgimage" class="siteBackgroundcurrentImage" data-reactid=".0.$SITE_BACKGROUND.$c1dmp.$background_currentImage_fixed" data-image-css="{&quot;backgroundSize&quot;:&quot;cover&quot;,&quot;backgroundPosition&quot;:&quot;center center&quot;,&quot;backgroundRepeat&quot;:&quot;no-repeat&quot;}"></div>-->
+
 <!--
-
-    <div id="SITE_BACKGROUND" class="siteBackground" style="position: absolute; top: 0px; height: 2891px; width: 980px;" data-reactid=".0.$SITE_BACKGROUND">
-
-        <div id="SITE_BACKGROUND_current_c1dmp" style="top:0;height:100%;width:100%;background-color:rgba(255, 255, 255, 1);display:;position:fixed;" class="siteBackgroundcurrent" data-reactid=".0.$SITE_BACKGROUND.$c1dmp">
-            <div id="SITE_BACKGROUND_currentImage_c1dmp" style="position: absolute; top: 0px; height: 100%; width: 100%; opacity: 1; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url(&quot;https://static.wixstatic.com/media/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg/v1/fill/w_1501,h_997,al_c,q_85/84770f_be3f607ccbbc4053a20701f14104bb0f.jpg&quot;);" data-type="bgimage" class="siteBackgroundcurrentImage" data-reactid=".0.$SITE_BACKGROUND.$c1dmp.$background_currentImage_fixed" data-image-css="{&quot;backgroundSize&quot;:&quot;cover&quot;,&quot;backgroundPosition&quot;:&quot;center center&quot;,&quot;backgroundRepeat&quot;:&quot;no-repeat&quot;}"></div>
-
         </div>
     </div>
+-->
 
-                                        <div style="position: absolute; width: 772px; height: 159px; top: 148px; left: 104px;" class="s14" id="comp-iiyg26n9" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1dmp_DESKTOP.1.$comp-iiyg26n9">
+                                        <div style="position: absolute; width: 772px; height: 159px; top: 148px; left: 104px;" >
                                        
-                                                <div style="width: 772px; position: absolute; visibility: inherit; left: 0px; top: 59px;" class="s2" id="comp-ihkdkdq9" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1dmp_DESKTOP.1.$comp-iiyg26n9.0.$comp-ihkdkdq9">
+                                                <div style="width: 772px; position: absolute; visibility: inherit; left: 0px; top: 59px;" >
                                                     <h4 class="font_4" style="line-height: 1.4em;"><span style="font-family:bodoni-w01-poster,bodoni-poster-w10,fantasy;">關於</span></h4>
 
                                                     <h4 class="font_4" style="line-height: 1.4em;"><span style="font-family:bodoni-w01-poster,bodoni-poster-w10,fantasy;">電影</span></h4>
                                                 </div>
                                               
                                                     <h2 ><span class="color_19"><span style="font-size:20px"><span style="letter-spacing:0.15em"><span>zachshen</span></span></span></span></h2>
+                                                    
                                                 </div>
-                                          
+<!--         style="position:                                 -->
                                         
--->
-   
     <!--            save!!!!!!!!!!!-->
  
 <!--CONTENT-->
-    
+<!--
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     
+-->
       <div id="tooltip" class="hidden">
         <p><strong id="name">Hello</strong></p>
         <p id="director">tooltip</p>
+        <p id="years">year</p>
+        <p id="awards">awards</p>
     </div>
     <script>
+        
         var w = 900;
         var h = 600;
-        var padding = 90;
+        var padding = 120;
         var letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "M", "N", "O", "P", "Q", "T", "U", "V", "W", "X", "Z"];
 
         svg();
@@ -161,6 +176,12 @@
             d3.selectAll("circle")
                 //           加數值用ＴＲＡＮＳＩＴＩＯＮ 使他變動產生動畫
                 //           所有ＣＩＲＣＬＥ選起來改變她的屬性
+//                .transition()
+//                .duration(100)
+//                .delay(function(d,i){
+//                    return i*10;
+//                                    })
+//                .attr({fill:category20()})
 //             .transition()
                 .attr({
                     cx: function (d) {
@@ -173,27 +194,39 @@
                         return rScale(+d.number);
                     },
                     fill: function (d) {
-                        return fScale(letterList.indexOf(d.category));
+                        return fScale(letterList.indexOf(d.cid));
                     }
                 })
+        
+//            -----
+            
 //RETURN FSCALE D. XXXXXX
 //到底為甚麼
             //           要找球的位置 用ＡＴＴＲ拿她的ＣＸＣＹ
             //           +12 讓他位移 把字串改數字用parseFloat
+//            +數值 調整口TOOL SVG位置 + (數值)
             .on("mouseover", function (d) {
                     var xPos =
-                        parseFloat(d3.select(this).attr("cx")) + 12;
+                        parseFloat(d3.select(this).attr("cx")) + 20;
 
                     var yPos =
-                        parseFloat(d3.select(this).attr("cy")) + 12;
+                        parseFloat(d3.select(this).attr("cy")) + 120;
                 var tooltip=
                 d3.select("#tooltip").style({
+                        color:"white",
                         left: xPos + "px",
-                        top: yPos + "px"
+                        top: yPos + "px",
+                        opacity:0.7
+                        
                     });
+//                CSS 改這邊 透明度
+//                改變TOOLTIP 顏色在這↑↑↑↑↑↑↑↑↑↑　""
+//                改變TOOLTIP 顏色在這↑↑↑↑↑↑↑↑↑↑  ""
 //hidden T,F要寫到
                     d3.select("#name").text(d.name);
                     d3.select("#director").text(d.director);
+                    d3.select("#years").text(d.years+"年");
+                    d3.select("#awards").text(d.awards);
                     d3.select("#tooltip").classed("hidden",false);})
                     .on("mouseout", function (d) {
                     d3.select("#tooltip").classed("hidden", true);
@@ -229,6 +262,7 @@
             var filtercategoryArr = uniquecategoryArr.filter(function (d) {
                 return d != "";
             });
+             var fScale = d3.scale.category20();
 
             //畫出按鈕們
             //            選出全部ＩＮＰＵＴ
@@ -236,7 +270,6 @@
                 .append("div")
                 .selectAll("input")
                 .data(filtercategoryArr);
-
             //            沒有綁定視覺元素的把它加上ＩＮＰＵＴ
             selection.enter()
                 .append("input")
@@ -246,11 +279,12 @@
                         return d;
                     }
                 })
+             //                    當行業別按鈕按下時執行  d是行業別
                 .on("click", function (d) {
-                    //                    當行業別按鈕按下時執行  d是行業別
                     update(d);
 
                 });
+ var fScale = d3.scale.category20();
 
 
             //            拿整份dataset
@@ -263,6 +297,7 @@
                 //???
                 bind(newDataSet);
                 render(newDataSet);
+                
             }
 
             function unique(array) {
@@ -279,7 +314,9 @@
 
 
 
-      
+         <div style="left: 102px; width: 731px; position: absolute; top: 116px;" class="s2" id="comp-ihkemfh3" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1dmp_DESKTOP.1.$comp-ihkexxcm.1.$mediairlovtpt/=1$mediairlovtpt.1.$comp-ihkemfh3">
+                                                            <h3 class="font_3" style="line-height: 1.4em; font-size: 27px;"><span style="font-size:27px;"><span style="letter-spacing:0.35em">2016-D3JS-275</span></span></h3>
+                                                        </div>      
                                                         
 </body>
 
